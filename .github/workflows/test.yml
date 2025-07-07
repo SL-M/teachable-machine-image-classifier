@@ -27,8 +27,6 @@ jobs:
         
     - name: Run prediction test
       run: |
-        # Verify files exist first
-        ls -R model/
         python predict.py --image test_images/cat.jpg
     
     - name: Run unit tests (optional)
