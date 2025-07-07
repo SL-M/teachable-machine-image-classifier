@@ -1,7 +1,7 @@
 # Core dependencies
 tensorflow==2.12.0
 pillow>=9.0.0
-numpy>=1.24.0
+numpy>=1.22,<1.24
 
 # Compatibility and testing
 h5py==3.10.0
