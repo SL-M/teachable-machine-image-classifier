@@ -1,0 +1,29 @@
+name: Test Image Classifier
+
+on: [push, pull_request]  # Triggers on code push or PR
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # GitHub's Linux VM
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.10"
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pytest pillow
+    
+    - name: Run prediction test
+      run: |
+        python predict.py --image test_images/cat.jpg  # Replace with your test image
+    
+    - name: Run unit tests (optional)
+      run: |
+        python -m pytest test_predict.py -v
