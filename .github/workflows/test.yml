@@ -17,8 +17,8 @@ jobs:
     
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
-        pip install pytest pillow
+        pip install tensorflow==2.12.0 pillow numpy
+        pip install h5py==3.10.0  # Specific version for compatibility
         
     - name: Verify files
       run: |
