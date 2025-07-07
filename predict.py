@@ -31,9 +31,9 @@ def predict_image(model_path, labels_path, image_path):
 
 if __name__ == "__main__":
     # File paths
-    MODEL_PATH = "keras_model.h5"
-    LABELS_PATH = "labels.txt"
-    IMAGE_PATH = "cat.jpg"  # Replace with your image
+    MODEL_PATH = "model/keras_model.h5"
+    LABELS_PATH = "model/labels.txt"
+    IMAGE_PATH = "test_images/cat.jpg"  # Replace with your image
     
     # Get prediction
     class_name, confidence = predict_image(MODEL_PATH, LABELS_PATH, IMAGE_PATH)
