@@ -2,8 +2,8 @@ import os
 from keras.models import load_model
 from PIL import Image, ImageOps
 import numpy as np
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "model", "keras_model.h5")
-LABELS_PATH = os.path.join(os.path.dirname(__file__), "model", "labels.txt")
+MODEL_PATH = os.path.join(os.path.dirname("main"), "model", "keras_model.h5")
+LABELS_PATH = os.path.join(os.path.dirname("main"), "model", "labels.txt")
 
 def predict_image(model_path, labels_path, image_path):
     # Load the model
