@@ -19,7 +19,12 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pytest pillow
-    
+        
+    - name: Verify files
+      run: |
+        [ -f model/keras_model.h5 ] || { echo "Model file missing!"; exit 1; }
+        [ -f test_images/cat.jpg ] || { echo "Test image missing!"; exit 1; }
+        
     - name: Run prediction test
       run: |
         # Verify files exist first
