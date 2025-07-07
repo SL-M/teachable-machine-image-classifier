@@ -19,6 +19,7 @@ jobs:
       run: |
         pip install tensorflow==2.12.0 pillow numpy
         pip install h5py==3.10.0  # Specific version for compatibility
+        pip install pytest
         
     - name: Verify files
       run: |
