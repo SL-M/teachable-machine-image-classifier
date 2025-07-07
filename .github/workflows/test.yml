@@ -19,10 +19,15 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install pytest pillow
-    
+        
+    - name: Verify files
+      run: |
+        [ -f model/keras_model.h5 ] || { echo "Model file missing!"; exit 1; }
+        [ -f test_images/cat.jpg ] || { echo "Test image missing!"; exit 1; }
+        
     - name: Run prediction test
       run: |
-        python predict.py --image test_images/cat.jpg  # Replace with your test image
+        python predict.py --image test_images/cat.jpg
     
     - name: Run unit tests (optional)
       run: |
